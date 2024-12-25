@@ -1,0 +1,61 @@
+.layout {
+  width: 100%;
+  height: calc(100dvh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  padding: 20px;
+  border-bottom: 3px solid #cfcfcf;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: right;
+  height: 60px;
+  display: flex;
+  gap: 1.5em;
+}
+
+.wizard {
+  width: 50%;
+}
+
+.wizard__textfield {
+  font-size: 1.2em;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wizard__unit {
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.wizard__label {
+  display: flex;
+  align-items: center
+}
+
+.wizard__result-link {
+  color: green;
+  font-size: 1.5em;
+  margin: 12px 0;
+  display: inline-block;
+}
+
+.listing {
+    width: 100%
+}
+
+.listing__actions {
+    text-align: right;
+}
+
+h1,h2,h3,h4,h5 {
+    padding: 0;
+    margin: 0;
+}
+
+

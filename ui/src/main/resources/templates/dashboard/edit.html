@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Edit link</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+
+<div class="header">
+    <h3 th:text="'Link ' + ${link.uid}"/>
+    <a th:href="'/dashboard/' + ${userId}">Dashboard</a>
+</div>
+
+<div class="layout js-root">
+    <form class="wizard js-form">
+        <fieldset class="wizard__unit">
+            <legend>Time to live</legend>
+            <input autofocus class="wizard__textfield" name="url" th:value="${link.href}"/>
+        </fieldset>
+
+        <fieldset class="wizard__unit">
+            <legend>Requests limit</legend>
+            <input name="r_limit" th:max="${maxLimit}" th:min="${minLimit}" th:value="${link.r_limit}" type="number"/>
+        </fieldset>
+
+        <fieldset class="wizard__unit">
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</div>
+<script th:src="@{/js/api.js}"></script>
+<script th:src="@{/js/edit.js}"></script>
+</body>
+</html>

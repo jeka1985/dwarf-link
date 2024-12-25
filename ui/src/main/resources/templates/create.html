@@ -1,0 +1,48 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Create short link</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+
+<div class="header" th:if="${userId}">
+    <a th:href="'/dashboard/' + ${userId}">Dashboard</a>
+</div>
+
+<div class="layout js-root">
+    <form class="wizard js-form">
+        <fieldset class="wizard__unit">
+            <legend>Link to be shorten</legend>
+            <input autofocus class="wizard__textfield" name="url"/>
+            <div class="wizard__result js-result"></div>
+        </fieldset>
+
+        <fieldset class="wizard__unit">
+            <legend>Time to live</legend>
+
+            <label>
+                <input checked name="day_limits" type="radio" value="1"> One day
+            </label>
+
+            <label>
+                <input name="day_limits" type="radio" value="10"> 10 days
+            </label>
+
+            <label>
+                <input name="day_limits" type="radio" value="30"> 30 days
+            </label>
+        </fieldset>
+
+        <fieldset class="wizard__unit">
+            <button type="submit">Submit</button>
+            <button type="reset">Clear</button>
+        </fieldset>
+    </form>
+</div>
+<script th:src="@{/js/api.js}"></script>
+<script th:src="@{/js/create.js}"></script>
+</body>
+</html>

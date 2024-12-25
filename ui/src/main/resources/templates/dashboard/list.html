@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Create short link</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+<div class="layout js-root">
+    <div class="wizard">
+        <table border="1" class="listing">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th colspan="2">Href</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="listing__row" th:data-id="${link.uid}" th:each="link: ${links}">
+                <td>
+                    <a th:href="'/dashboard/' + ${userId} + '/link/' + ${link.uid}" th:text="${link.uid}"/>
+                </td>
+                <td th:text="${link.href}"/>
+                <td class="listing__actions">
+                    <button class="js-action" data-action="remove" th:data-id="${link.uid}">remove</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script th:src="@{/js/api.js}"></script>
+<script th:src="@{/js/list.js}"></script>
+</body>
+</html>
